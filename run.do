@@ -1,6 +1,6 @@
 vlib work
 vlog *.sv
-vsim -voptargs=+acc *.tb
+vsim -voptargs=+acc top
 add wave *
 run _all
 quit -sim
