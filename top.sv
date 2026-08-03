@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 package pckg;
     localparam int DEFAULT_ADDR_WIDTH = 16;
     localparam time CLOCK_PERIOD = 10;
@@ -5,7 +6,8 @@ package pckg;
         CNTRL_UPDATE_PC = 4'b1010,
         CNTRL_READ_MEMORY = 4'b0110,
         CNTRL_IND_ADDR_RD = 4'b0111,
-        CNTRL_WRITE_MEM = 4'b1000
+        CNTRL_WRITE_MEM = 4'b1000,
+        CNTRL_TEST = 4'b0000
     } cntrl_e;
 endpackage
 
@@ -14,4 +16,5 @@ module top();
     always #(pckg::CLOCK_PERIOD/2) clk = ~clk;
     fetch_inf inf(clk);
     fetch_unit dut(inf.dut);
+    fetch_test tb(inf.tb, inf.monitor);
 endmodule

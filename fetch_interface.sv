@@ -3,7 +3,7 @@ interface fetch_inf (input bit clk);
     parameter int aw = DEFAULT_ADDR_WIDTH;
     logic [aw - 1:0] taddr;
     logic br_taken, reset, clock;
-    cntrl_e [4:0] state;
+    cntrl_e state;
     logic [aw - 1:0] npc, pc;
     logic rd;
 

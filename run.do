@@ -2,5 +2,5 @@ vlib work
 vlog *.sv
 vsim -voptargs=+acc top
 add wave *
-run _all
+run -all
 quit -sim
